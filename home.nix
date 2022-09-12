@@ -66,5 +66,20 @@
     ];
   };
 
+  programs.tmux = {
+    enable = true;
+    shortcut = "b";
+    keyMode = "vi";
+    newSession = true;
+    baseIndex = 1;
+    clock24 = false;
+    customPaneNavigationAndResize = true;
+    escapeTime = 0;
+    extraConfig = ''
+      # Enable mouse
+      setw -g mouse on
+    '';
+  };
+
 }
 
