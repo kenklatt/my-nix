@@ -93,7 +93,7 @@
       pkgs.vimPlugins.surround
       pkgs.vimPlugins.vim-nix
     ];
-    extraConfig = builtins.readFile ./vimrc;
+    extraConfig = builtins.readFile ./dotfiles/vimrc;
   };
 
 }
