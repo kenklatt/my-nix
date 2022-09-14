@@ -15,6 +15,17 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Map CapsLock to Esc on single press and Ctrl on when used with multiple keys.
+  services.interception-tools = {
+    enable = true;
+    udevmonConfig = ''
+      - JOB: "${pkgs.interception-tools}/bin/intercept -g $DEVNODE | ${pkgs.interception-tools-plugins.caps2esc}/bin/caps2esc | ${pkgs.interception-tools}/bin/uinput -d $DEVNODE"
+        DEVICE:
+          EVENTS:
+            EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
+    '';
+  };
+
   # Framework-specific workarounds
   boot.kernelPackages = pkgs.linuxPackages_5_18; # Need a modern kernel for X11 to start
   boot.kernelParams = [ "module_blacklist=hid_sensor_hub" ]; # https://community.frame.work/t/12th-gen-not-sending-xf86monbrightnessup-down/20605
