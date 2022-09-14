@@ -16,9 +16,15 @@
   # changes in each release.
   home.stateVersion = "22.05";
 
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      export EDITOR=vim
+    '';
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 
   programs.git = {
     enable = true;
@@ -79,6 +85,15 @@
       # Enable mouse
       setw -g mouse on
     '';
+  };
+
+  programs.vim = {
+    enable = true;
+    plugins = [
+      pkgs.vimPlugins.surround
+      pkgs.vimPlugins.vim-nix
+    ];
+    extraConfig = builtins.readFile ./vimrc;
   };
 
 }
