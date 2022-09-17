@@ -37,6 +37,7 @@
       lla = "ls -la";
       ".." = "cd ..";
       gits = "git s";
+      nixos-rebuild = "nixos-rebuild --flake . --use-remote-sudo";
     };
     shellOptions = [
       "histappend"
