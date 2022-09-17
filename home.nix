@@ -18,6 +18,7 @@
 
   home.packages = with pkgs; [
     ripgrep-all
+    tree
   ];
 
   home.file.".config/ripgreprc" = {
