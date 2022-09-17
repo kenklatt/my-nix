@@ -16,8 +16,8 @@
   # changes in each release.
   home.stateVersion = "22.05";
 
-  home.packages = [
-    pkgs.ripgrep-all
+  home.packages = with pkgs; [
+    ripgrep-all
   ];
 
   home.file.".config/ripgreprc" = {
@@ -172,9 +172,9 @@
 
   programs.vim = {
     enable = true;
-    plugins = [
-      pkgs.vimPlugins.surround
-      pkgs.vimPlugins.vim-nix
+    plugins = with pkgs.vimPlugins; [
+      surround
+      vim-nix
     ];
     extraConfig = builtins.readFile ./dotfiles/vimrc;
   };
