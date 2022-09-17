@@ -1,0 +1,19 @@
+# If not running interactively, don't do anything
+# https://unix.stackexchange.com/a/257613
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+export EDITOR=vim
+
+mkcd() {
+	mkdir "$1" && cd "$1"
+}
+
+# less (the pager) is configured through an environment variable
+# -j.5 causes the active search result to be displayed halfway (.5) down the page.
+# -FRSX is for compatibility with Git. Git won't override the variable if it is set.
+# -i case insensitive search by default
+export LESS='-j.5-FRSi --mouse --wheel-lines=3'
+

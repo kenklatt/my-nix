@@ -18,16 +18,26 @@
 
   programs.bash = {
     enable = true;
-    initExtra = ''
-      export EDITOR=vim
-    '';
+    historyControl = [
+      "ignoredups"
+      "ignorespace"
+    ];
+    initExtra = builtins.readFile ./dotfiles/bashrc;
     shellAliases = {
       ll = "ls -l";
-      la = "ls -a";
+      la = "ls -A";
       lla = "ls -la";
       ".." = "cd ..";
+      gits = "git s";
     };
+    shellOptions = [
+      "histappend"
+      "checkwinsize"
+      "globstar"
+    ];
   };
+
+  programs.lesspipe.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
