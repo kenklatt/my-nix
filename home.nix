@@ -21,6 +21,12 @@
     initExtra = ''
       export EDITOR=vim
     '';
+    shellAliases = {
+      ll = "ls -l";
+      la = "ls -a";
+      lla = "ls -la";
+      ".." = "cd ..";
+    };
   };
 
   # Let Home Manager install and manage itself.
