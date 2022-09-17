@@ -16,6 +16,14 @@
   # changes in each release.
   home.stateVersion = "22.05";
 
+  home.packages = [
+    pkgs.ripgrep-all
+  ];
+
+  home.file.".config/ripgreprc" = {
+    source = ./dotfiles/ripgreprc;
+  };
+
   programs.bash = {
     enable = true;
     historyControl = [

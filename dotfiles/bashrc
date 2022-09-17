@@ -17,3 +17,5 @@ mkcd() {
 # -i case insensitive search by default
 export LESS='-j.5-FRSi --mouse --wheel-lines=3'
 
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgreprc
+
