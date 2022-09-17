@@ -233,6 +233,7 @@
     plugins = with pkgs.vimPlugins; [
       surround
       vim-nix
+      Improved-AnsiEsc
     ];
     extraConfig = builtins.readFile ./dotfiles/vimrc;
   };
