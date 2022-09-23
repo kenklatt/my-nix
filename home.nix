@@ -52,6 +52,59 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.firefox = {
+    enable = true;
+    profiles = {
+      "ken" = {
+        id = 0;
+        isDefault = true;
+        extraConfig = ""; # TODO: user.js goes here
+        userChrome = ""; # TODO: userChrome.css goes here
+        userContent = ""; # TODO: userContent.css goes here
+        settings = {
+          "browser.urlbar.clickSelectsAll" = true;
+          "browser.urlbar.doubleClickSelectsAll" = false;
+          "browser.tabs.tabMinWidth" = 0;
+          "general.autoScroll" = true;
+          # Restore tabs automatically
+          "browser.startup.page" = 3;
+          # Don't warn about closing tabs
+          "browser.tabs.warnOnClose" = false;
+          # Don't cycle tabs in MRU order
+          "browser.ctrlTab.recentlyUsedOrder" = false;
+          # Allow DRMed content
+          "media.eme.enabled" = true;
+          # Disable Pocket
+          # Note: Still has to be manually removed from the homepage
+          # See about:preferences#home
+          "extensions.pocket.enabled" = false;
+          #Don't offer to save passwords
+          "signon.rememberSignons" = false;
+        };
+      };
+    };
+    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      amp2html
+      darkreader
+      vimium
+      bitwarden
+      ublock-origin
+      #https-everywhere
+      #stylus
+      #reddit-enhancement-suite
+      #plasma-integration
+      #peertubeify
+      #old-reddit-redirect
+      #link-cleaner
+      #google-search-link-fix
+      #anchors-reveal
+      #facebook-container
+      #want: history-autodelete
+      #want: dontbugme
+      #want: Disable Ctrl-Q and Cmd-Q
+    ];
+  };
+
   programs.git = {
     enable = true;
     userName = "Ken Klatt";

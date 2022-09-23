@@ -63,6 +63,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  environment.sessionVariables = {
+    MOZ_USE_XINPUT2 = "1"; # TODO: Can this be moved into my home-manager configuration (beside programs.firefox) somehow?
+  };
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -88,7 +91,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      firefox
       thunderbird
     ];
   };
