@@ -19,6 +19,25 @@
   home.packages = with pkgs; [
     ripgrep-all
     tree
+    tdesktop
+    libxml2
+    htop
+    whois
+    units
+    git
+    xclip
+    traceroute
+    jq
+    #vim_configurable # _configurable is the one with X support (for clipboard)
+    ungoogled-chromium
+    p7zip
+    #spotify
+    nyxt
+    quickemu
+    cloc
+    bat
+    exa
+    fd
   ];
 
   home.file.".config/ripgreprc" = {

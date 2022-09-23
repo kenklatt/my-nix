@@ -103,7 +103,7 @@
     tmux
     git
     tealdeer
-    ripgrep
+    ripgrep-all
     fd
   ];
 
