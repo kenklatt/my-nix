@@ -102,26 +102,6 @@
         };
       };
     };
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      amp2html
-      darkreader
-      vimium
-      bitwarden
-      ublock-origin
-      #https-everywhere
-      #stylus
-      #reddit-enhancement-suite
-      #plasma-integration
-      #peertubeify
-      #old-reddit-redirect
-      #link-cleaner
-      #google-search-link-fix
-      #anchors-reveal
-      #facebook-container
-      #want: history-autodelete
-      #want: dontbugme
-      #want: Disable Ctrl-Q and Cmd-Q
-    ];
   };
 
   programs.git = {
