@@ -31,7 +31,7 @@
     #vim_configurable # _configurable is the one with X support (for clipboard)
     ungoogled-chromium
     p7zip
-    #spotify
+    spotify
     nyxt
     quickemu
     cloc

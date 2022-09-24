@@ -15,6 +15,8 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  nixpkgs.config.allowUnfree = true; # Allow unfree software
+
   # Map CapsLock to Esc on single press and Ctrl on when used with multiple keys.
   services.interception-tools = {
     enable = true;
