@@ -100,6 +100,9 @@
           #Don't offer to save passwords
           "signon.rememberSignons" = false;
           "https-only-mode-setting" = true;
+          # Faster Pageload needs these
+          "network.dns.disablePrefetchFromHTTPS" = false;
+          "network.predictor.enable-prefetch" = true;
         };
       };
     };
