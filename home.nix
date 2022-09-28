@@ -99,6 +99,7 @@
           "extensions.pocket.enabled" = false;
           #Don't offer to save passwords
           "signon.rememberSignons" = false;
+          "https-only-mode-setting" = true;
         };
       };
     };
