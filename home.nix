@@ -38,7 +38,16 @@
     bat
     exa
     fd
+    discord
   ];
+
+  home.file.".config/discord/settings.json" = {
+    text = ''
+      {
+        "SKIP_HOST_UPDATE": true
+      }
+    '';
+  };
 
   home.file.".config/ripgreprc" = {
     source = ./dotfiles/ripgreprc;
