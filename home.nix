@@ -64,7 +64,16 @@
     ];
   };
 
-
+  programs.emacs = {
+    enable = true;
+    extraConfig = builtins.readFile ./dotfiles/emacs/init.el;
+    extraPackages = emacsPackages: with emacsPackages; [
+      evil
+      #magit
+      #slime
+      #helm
+    ];
+  };
 
   programs.lesspipe.enable = true;
 
