@@ -40,6 +40,8 @@
     exa
     fd
     discord
+    glxinfo
+    pciutils
   ];
 
   home.file.".config/discord/settings.json" = {
