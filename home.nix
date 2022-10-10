@@ -123,6 +123,7 @@
     userName = "Ken Klatt";
     userEmail = "ken@kla.tt"; # TODO: Make this conditional for work email
     aliases = {
+      co = "checkout";
       s = "status";
       sw = "switch";
       d = "diff";
