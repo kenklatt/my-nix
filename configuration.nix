@@ -30,7 +30,7 @@
   };
 
   # Framework-specific workarounds
-  boot.kernelPackages = pkgs.linuxPackages_5_18; # Need a modern kernel for X11 to start
+  boot.kernelPackages = pkgs.linuxPackages_5_19; # Need a modern kernel for X11 to start
   boot.kernelParams = [ "module_blacklist=hid_sensor_hub" ]; # https://community.frame.work/t/12th-gen-not-sending-xf86monbrightnessup-down/20605
   fileSystems = {
     "/".options = [ "compress=zstd" ];
