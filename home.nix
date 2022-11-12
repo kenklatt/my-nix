@@ -28,6 +28,10 @@
     discord
     glxinfo
     pciutils
+    yt-dlp
+    mpv
+    transmission-gtk
+    vlc
   ];
 
   home.file.".config/discord/settings.json" = {
