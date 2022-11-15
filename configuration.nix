@@ -55,7 +55,7 @@
   services.xserver.xkbOptions = "caps:escape";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   hardware.pulseaudio.enable = false;
   services.pipewire = {
