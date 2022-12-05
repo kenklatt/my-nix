@@ -44,6 +44,13 @@
 
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
+  # Set up deep sleep + hibernation
+  # Partition swapfile is on (after LUKS decryption)
+  boot.resumeDevice = "/dev/disk/by-uuid/5152bd70-56f8-43f5-9ab1-fac8c3e4b47c";
+  # Resume Offset is offset of swapfile
+  # https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
+  boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=1468748" ];
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

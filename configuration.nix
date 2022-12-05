@@ -9,6 +9,17 @@
 
   hardware.bluetooth.enable = true;
 
+  # Suspend-then-hibernate
+  services.logind = {
+    lidSwitch = "suspend-then-hibernate";
+    extraConfig = ''
+      HandlePowerKey=suspend-then-hibernate
+      IdleAction=suspend-then-hibernate
+      IdleActionSec=2m
+    '';
+  };
+  systemd.sleep.extraConfig = "HibernateDelaySec=2h";
+
   networking.hostName = "framework";
   networking.networkmanager.enable = true;
 
