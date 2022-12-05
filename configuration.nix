@@ -7,6 +7,8 @@
       ./imports/steam.nix
     ];
 
+  hardware.bluetooth.enable = true;
+
   networking.hostName = "framework";
   networking.networkmanager.enable = true;
 
