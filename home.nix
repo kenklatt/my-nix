@@ -215,6 +215,9 @@
       diff = {
         noprefix = true;
       };
+      init = {
+        defaultBranch = "main";
+      };
     };
     ignores = [
       "*.swp"
