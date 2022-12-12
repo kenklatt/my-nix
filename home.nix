@@ -21,6 +21,7 @@
     spotify
     nyxt
     quickemu
+    spice-gtk # needed for `spicy` which quickemu uses
     cloc
     bat
     exa
