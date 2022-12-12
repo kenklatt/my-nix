@@ -20,6 +20,8 @@
   };
   systemd.sleep.extraConfig = "HibernateDelaySec=2h";
 
+  services.emacs.enable = true;
+
   networking.hostName = "framework";
   networking.networkmanager.enable = true;
 
