@@ -16,7 +16,7 @@
     traceroute
     jq
     #vim_configurable # _configurable is the one with X support (for clipboard)
-    ungoogled-chromium
+    chromium
     p7zip
     spotify
     nyxt
