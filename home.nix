@@ -33,6 +33,8 @@
     mpv
     transmission-gtk
     vlc
+    unzip
+    ark
   ];
 
   home.file.".config/discord/settings.json" = {
