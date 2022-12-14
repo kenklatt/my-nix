@@ -35,6 +35,9 @@
     vlc
     unzip
     ark
+    sbcl
+    lispPackages.quicklisp
+    clisp
   ];
 
   home.file.".config/discord/settings.json" = {
