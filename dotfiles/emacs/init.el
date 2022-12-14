@@ -16,4 +16,5 @@
 
 ;; Enable pdf-tools on-demand (not on startup)
 (pdf-loader-install)
+(add-hook 'pdf-tools-enabled-hook 'pdf-view-themed-minor-mode) ;; Match current Emacs theme
 
