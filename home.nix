@@ -76,6 +76,8 @@
     extraConfig = builtins.readFile ./dotfiles/emacs/init.el;
     extraPackages = emacsPackages: with emacsPackages; [
       evil
+      pdf-tools
+      org-pdftools
       #magit
       #slime
       #helm

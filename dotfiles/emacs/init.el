@@ -14,3 +14,6 @@
 (require 'evil)
 (evil-mode 1)
 
+;; Enable pdf-tools on-demand (not on startup)
+(pdf-loader-install)
+
