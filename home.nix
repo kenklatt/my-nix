@@ -38,6 +38,7 @@
     sbcl
     lispPackages.quicklisp
     clisp
+    killall
   ];
 
   home.file.".config/discord/settings.json" = {
