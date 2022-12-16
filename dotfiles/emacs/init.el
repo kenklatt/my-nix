@@ -6,14 +6,6 @@
 (package-initialize)
 (package-refresh-contents)
 
-;; Download Evil
-(unless (package-installed-p 'evil)
-(package-install 'evil))
-
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
-
 ;; Enable pdf-tools on-demand (not on startup)
 (pdf-loader-install)
 (add-hook 'pdf-tools-enabled-hook 'pdf-view-themed-minor-mode) ;; Match current Emacs theme
