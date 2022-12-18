@@ -86,7 +86,7 @@
       golden-ratio-scroll-screen
       #magit
       #slime
-      #helm
+      helm
     ];
   };
 

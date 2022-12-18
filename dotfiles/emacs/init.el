@@ -5,6 +5,11 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; Helm
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(helm-mode t)
+
 ;; Golden-ratio scroll screen
 (package-install 'golden-ratio-scroll-screen)
 (require 'golden-ratio-scroll-screen)
