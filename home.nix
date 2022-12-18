@@ -80,6 +80,7 @@
     extraConfig = builtins.readFile ./dotfiles/emacs/init.el;
     extraPackages = emacsPackages: with emacsPackages; [
       evil
+      meow
       pdf-tools
       org-pdftools
       #magit
