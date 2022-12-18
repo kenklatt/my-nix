@@ -83,6 +83,7 @@
       meow
       pdf-tools
       org-pdftools
+      golden-ratio-scroll-screen
       #magit
       #slime
       #helm

@@ -5,6 +5,12 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; Golden-ratio scroll screen
+(package-install 'golden-ratio-scroll-screen)
+(require 'golden-ratio-scroll-screen)
+(global-set-key [remap scroll-down-command] 'golden-ratio-scroll-screen-down)
+(global-set-key [remap scroll-up-command] 'golden-ratio-scroll-screen-up)
+
 ;; Evil
 (require 'evil)
 (setq evil-want-C-u-scroll t)
