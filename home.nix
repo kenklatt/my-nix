@@ -87,6 +87,7 @@
       #magit
       #slime
       helm
+      nix-mode
     ];
   };
 
