@@ -5,6 +5,9 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; winner-mode (window undo/redo)
+(winner-mode t)
+
 ;; nix-mode
 (require 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
