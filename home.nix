@@ -85,7 +85,7 @@
       org-pdftools
       golden-ratio-scroll-screen
       #magit
-      #slime
+      slime
       helm
       nix-mode
     ];
