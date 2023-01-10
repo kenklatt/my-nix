@@ -2,6 +2,12 @@
 
 {
 
+  # Fix application links in Gnome
+  # https://github.com/nix-community/home-manager/issues/1439#issuecomment-714830958
+  targets.genericLinux.enable = true;
+  xdg.enable = true;
+  xdg.mime.enable = true;
+
   home.packages = with pkgs; [
     ripgrep
     ripgrep-all
@@ -39,6 +45,18 @@
     lispPackages.quicklisp
     clisp
     killall
+    postman
+    python27
+    python27Packages.pip
+    nomacs
+    libreoffice
+    pgcli
+    fzf
+    dive
+    quickemu
+    cloc
+    procs
+    tealdeer
   ];
 
   home.file.".config/discord/settings.json" = {
@@ -53,6 +71,9 @@
     source = ./dotfiles/ripgreprc;
   };
 
+  home.file.".config/work.sh" = {
+    source = ./dotfiles/work.sh;
+  };
   programs.bash = {
     enable = true;
     historyControl = [
@@ -61,9 +82,9 @@
     ];
     initExtra = builtins.readFile ./dotfiles/bashrc;
     shellAliases = {
-      ll = "ls -l";
-      la = "ls -A";
-      lla = "ls -la";
+      ls = "exa";
+      ll = "exa -alF";
+      la = "exa -a";
       ".." = "cd ..";
       gits = "git s";
       nixos-rebuild = "nixos-rebuild --flake . --use-remote-sudo";
@@ -246,6 +267,7 @@
     clock24 = false;
     customPaneNavigationAndResize = true;
     escapeTime = 0;
+    sensibleOnTop = true;
     plugins = with pkgs; [
         {
             plugin = tmuxPlugins.resurrect;
@@ -266,6 +288,28 @@
       Improved-AnsiEsc
     ];
     extraConfig = builtins.readFile ./dotfiles/vimrc;
+  };
+
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      # If you want to use overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = (_: true);
+    };
   };
 
   # Home Manager needs a bit of information about you and the
