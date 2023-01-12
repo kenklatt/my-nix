@@ -109,6 +109,7 @@
       slime
       helm
       nix-mode
+      backward-forward
     ];
   };
 

@@ -11,6 +11,9 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; backward-forward (closest I've found to vim's jump list)
+(backward-forward-mode t)
+
 ;; winner-mode (window undo/redo)
 (winner-mode t)
 
