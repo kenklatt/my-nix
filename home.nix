@@ -85,6 +85,7 @@
       ls = "exa";
       ll = "exa -alF";
       la = "exa -a";
+      lt = "exa --tree";
       ".." = "cd ..";
       gits = "git s";
       nixos-rebuild = "nixos-rebuild --flake . --use-remote-sudo";
