@@ -13,10 +13,18 @@
     nixpkgs,
     home-manager,
     nur
-  }: {
+  }:
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in
+  {
 
     nixosConfigurations."framework" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system pkgs;
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager {
@@ -30,7 +38,7 @@
     };
 
     homeConfigurations."ken@ken-work" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      inherit pkgs;
       modules = [
         ./home.nix
       ];
