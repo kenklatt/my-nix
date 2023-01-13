@@ -160,6 +160,7 @@
     userEmail = "ken@kla.tt"; # TODO: Make this conditional for work email
     aliases = {
       co = "checkout";
+      cp = "cherry-pick";
       s = "status";
       sw = "switch";
       d = "diff";
