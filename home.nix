@@ -83,9 +83,10 @@
     initExtra = builtins.readFile ./dotfiles/bashrc;
     shellAliases = {
       ls = "exa";
-      ll = "exa -alF";
+      ll = "exa -al --classify";
       la = "exa -a";
       lt = "exa --tree";
+      lr = "exa -l --classify --sort modified --reverse --color always | head";
       ".." = "cd ..";
       gits = "git s";
       nixos-rebuild = "nixos-rebuild --flake . --use-remote-sudo";
