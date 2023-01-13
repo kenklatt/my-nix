@@ -9,54 +9,53 @@
   xdg.mime.enable = true;
 
   home.packages = with pkgs; [
-    ripgrep
-    ripgrep-all
-    tree
-    tdesktop
-    libxml2
-    htop
-    whois
-    units
-    git
-    xclip
-    traceroute
-    jq
-    #vim_configurable # _configurable is the one with X support (for clipboard)
-    chromium
-    p7zip
-    spotify
-    nyxt
-    quickemu
-    spice-gtk # needed for `spicy` which quickemu uses
-    cloc
+    ark
     bat
+    chromium
+    clisp
+    cloc
+    cloc
+    discord
+    dive
     exa
     fd
-    discord
+    fzf
+    git
     glxinfo
-    pciutils
-    yt-dlp
-    mpv
-    transmission-gtk
-    vlc
-    unzip
-    ark
-    sbcl
-    lispPackages.quicklisp
-    clisp
+    htop
+    jq
     killall
+    libreoffice
+    libxml2
+    lispPackages.quicklisp
+    mpv
+    nomacs
+    nyxt
+    p7zip
+    pciutils
+    pgcli
     postman
+    procs
     python27
     python27Packages.pip
-    nomacs
-    libreoffice
-    pgcli
-    fzf
-    dive
     quickemu
-    cloc
-    procs
+    quickemu
+    ripgrep
+    ripgrep-all
+    sbcl
+    spice-gtk # needed for `spicy` which quickemu uses
+    spotify
+    tdesktop
     tealdeer
+    traceroute
+    transmission-gtk
+    tree
+    units
+    unzip
+    vlc
+    whois
+    xclip
+    yt-dlp
   ];
 
   home.file.".config/discord/settings.json" = {
@@ -92,9 +91,9 @@
       nixos-rebuild = "nixos-rebuild --flake . --use-remote-sudo";
     };
     shellOptions = [
-      "histappend"
       "checkwinsize"
       "globstar"
+      "histappend"
     ];
   };
 
@@ -102,16 +101,15 @@
     enable = true;
     extraConfig = builtins.readFile ./dotfiles/emacs/init.el;
     extraPackages = emacsPackages: with emacsPackages; [
-      evil
-      meow
-      pdf-tools
-      org-pdftools
-      golden-ratio-scroll-screen
-      #magit
-      slime
-      helm
-      nix-mode
       backward-forward
+      evil
+      golden-ratio-scroll-screen
+      helm
+      meow
+      nix-mode
+      org-pdftools
+      pdf-tools
+      slime
     ];
   };
 
@@ -228,8 +226,6 @@
         # content so that I stop closing my terminal trying to scroll down with ctrl-d.
         # -j.5: When searching have less put the result in the middle of the screen, not the top.
         pager = "less -+F -j.5";
-        #pager = vim -R +AnsiEsc -
-        #pager=  vim-pager
       };
       clean = {
         requireForce = false;
@@ -288,9 +284,9 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      Improved-AnsiEsc
       surround
       vim-nix
-      Improved-AnsiEsc
     ];
     extraConfig = builtins.readFile ./dotfiles/vimrc;
   };

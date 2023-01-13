@@ -92,13 +92,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs#wget
   environment.systemPackages = with pkgs; [
+    fd
+    git
+    ripgrep-all
+    tealdeer
+    tmux
     vim
     wget
-    tmux
-    git
-    tealdeer
-    ripgrep-all
-    fd
   ];
 
   # This value determines the NixOS release from which the default
