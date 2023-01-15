@@ -36,8 +36,6 @@
     pgcli
     postman
     procs
-    python27
-    python27Packages.pip
     quickemu
     quickemu
     ripgrep
